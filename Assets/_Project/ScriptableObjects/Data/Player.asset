@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4d7e623709a204349db1e0ffc1734b0, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: Assembly-CSharp::PlayerConfiguration
-  shipSpeed: 75
+  shipRoll: 25
+  shipPitch: 15
+  shipRotationSpeed: 10
+  shipSpeed: 50
+  xClampRange: 25
+  yClampRange: 15

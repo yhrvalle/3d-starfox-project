@@ -5,8 +5,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader playerInputReader;
     [SerializeField] private PlayerConfiguration playerConfig;
-    [SerializeField] private float xClampRange = 5f;
-    [SerializeField] private float yClampRange = 5f;
 
     private Vector2 _direction;
 
@@ -18,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         TranslateBehaviour();
+        RotationBehaviour();
     }
 
     private void OnEnable()
@@ -30,6 +29,15 @@ public class PlayerController : MonoBehaviour
         playerInputReader.Move -= OnMove;
     }
 
+    private void RotationBehaviour() // Ship rotation: (pitch, yaw, roll) x, y, z considering local rotation
+    {
+        float controlRoll = -playerConfig.ShipRoll * _direction.x;
+        float controlPitch = -playerConfig.ShipPitch * _direction.y;
+        Quaternion targetRotation = Quaternion.Euler(controlPitch, 0f, controlRoll);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * playerConfig.ShipRotationSpeed);
+    }
+
+
     private void OnMove(Vector2 move)
     {
         _direction = move;
@@ -38,15 +46,15 @@ public class PlayerController : MonoBehaviour
     private void TranslateBehaviour()
     {
         Vector3 rateChange = _direction * (playerConfig.ShipSpeed * Time.deltaTime);
-        transform.Translate(rateChange, Space.Self);
+        transform.localPosition = new Vector3(transform.localPosition.x + rateChange.x, transform.localPosition.y + rateChange.y, 0f);
         ClampPlayerPosition(rateChange);
     }
 
     private void ClampPlayerPosition(Vector3 rateChange) // using the camera probably is a more elegant way to do this.
     {
         Vector3 clampedPosition = transform.localPosition + rateChange;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -xClampRange, xClampRange);
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -yClampRange, yClampRange);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -playerConfig.XClampRange, playerConfig.XClampRange);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -playerConfig.YClampRange, playerConfig.YClampRange);
         transform.localPosition = new Vector3(clampedPosition.x, clampedPosition.y, transform.localPosition.z);
     }
 }
