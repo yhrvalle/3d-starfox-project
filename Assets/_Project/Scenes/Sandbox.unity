@@ -780,14 +780,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5224519612436762063, guid: cdc8803ac03d8b184b2c80ae31f5f8e4, type: 3}
-      propertyPath: xClampRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5224519612436762063, guid: cdc8803ac03d8b184b2c80ae31f5f8e4, type: 3}
-      propertyPath: yClampRange
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
