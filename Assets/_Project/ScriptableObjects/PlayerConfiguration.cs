@@ -5,6 +5,7 @@ public class PlayerConfiguration : ScriptableObject
 {
     [Header("Rotation Configuration")]
     [SerializeField] private float shipRoll;
+
     [SerializeField] private float shipPitch;
     [SerializeField] private float shipRotationSpeed;
 
@@ -13,6 +14,7 @@ public class PlayerConfiguration : ScriptableObject
 
     [Header("Clamp Configuration")]
     [SerializeField] private float xClampRange;
+
     [SerializeField] private float yClampRange;
 
     public float ShipSpeed => shipSpeed;

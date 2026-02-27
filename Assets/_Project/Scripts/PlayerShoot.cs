@@ -4,12 +4,18 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private PlayerInputReader inputReader;
+    [SerializeField] private ParticleSystem laser;
 
     private bool _fireInput;
 
     private void Start()
     {
         inputReader.EnablePlayerInputActions();
+    }
+
+    private void Update()
+    {
+        ProcessFiring();
     }
 
     private void OnEnable()
@@ -26,6 +32,11 @@ public class PlayerShoot : MonoBehaviour
     private void OnFire(bool input)
     {
         _fireInput = input;
-        Debug.Log("Fire Input: " + _fireInput);
+    }
+
+    private void ProcessFiring()
+    {
+        ParticleSystem.EmissionModule emission = laser.emission;
+        emission.enabled = _fireInput;
     }
 }
