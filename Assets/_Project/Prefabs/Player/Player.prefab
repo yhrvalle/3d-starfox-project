@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 1500
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4904,7 +4904,7 @@ MonoBehaviour:
   m_inputReader: {fileID: 11400000, guid: 613ddc49997a6f8af887cf3c5ed271a8, type: 2}
   m_laser: {fileID: 2351279771798878036}
   m_targetPoint: {fileID: 4135847736053928085}
-  m_targetPointDistance: 250
+  m_targetPointDistance: 300
 --- !u!65 &2925912269892753039
 BoxCollider:
   m_ObjectHideFlags: 0

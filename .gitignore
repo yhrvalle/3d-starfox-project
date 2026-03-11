@@ -135,5 +135,7 @@ Desktop.ini
 /[Aa]ssets/ImportedAssets.meta
 /[Aa]ssets/Plugins/
 /[Aa]ssets/Plugins.meta
+/[Aa]ssets/TextMesh Pro/
+/[Aa]ssets/TextMesh Pro.meta
 .idea
 .vscode/

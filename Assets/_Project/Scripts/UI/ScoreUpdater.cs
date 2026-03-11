@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core.UI
 {
-    public class ScoreUpdater : MonoBehaviour
+    public class ScoreUpdater
     {
         [SerializeField] private TMP_Text m_scoreText;
         [SerializeField] private ScoreUpdaterSO m_scoreChannel;
