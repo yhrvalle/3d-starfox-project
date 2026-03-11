@@ -1,0 +1,6 @@
+﻿<Solution>
+  <Project Path="BetterHierarchy.csproj" />
+  <Project Path="Enthalpy.Input.csproj" />
+  <Project Path="Core.csproj" />
+  <Project Path="Core.UI.csproj" />
+</Solution>
