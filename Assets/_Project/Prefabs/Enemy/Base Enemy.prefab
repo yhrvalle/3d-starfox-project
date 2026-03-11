@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2522edd26fb1d242865e24c30235158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Core::Enemy
-  deathEffect: {fileID: 8787571353249438963, guid: 874bc6592cc114ac091bcd3db8975f9a, type: 3}
+  m_deathEffect: {fileID: 8787571353249438963, guid: 874bc6592cc114ac091bcd3db8975f9a, type: 3}
+  m_enemyConfiguration: {fileID: 0}
 --- !u!1 &5495741149443361739
 GameObject:
   m_ObjectHideFlags: 0

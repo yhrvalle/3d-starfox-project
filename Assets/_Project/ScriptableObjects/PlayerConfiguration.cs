@@ -4,24 +4,24 @@ using UnityEngine;
 public class PlayerConfiguration : ScriptableObject
 {
     [Header("Rotation Configuration")]
-    [SerializeField] private float shipRoll;
+    [SerializeField] private float m_shipRoll;
 
-    [SerializeField] private float shipPitch;
-    [SerializeField] private float shipRotationSpeed;
+    [SerializeField] private float m_shipPitch;
+    [SerializeField] private float m_shipRotationSpeed;
 
     [Header("Movement Configuration")]
-    [SerializeField] private float shipSpeed;
+    [SerializeField] private float m_shipSpeed;
 
     [Header("Clamp Configuration")]
-    [SerializeField] private float xClampRange;
+    [SerializeField] private float m_xClampRange;
 
-    [SerializeField] private float yClampRange;
+    [SerializeField] private float m_yClampRange;
 
-    public float ShipSpeed => shipSpeed;
-    public float XClampRange => xClampRange;
-    public float YClampRange => yClampRange;
+    public float ShipSpeed => m_shipSpeed;
+    public float XClampRange => m_xClampRange;
+    public float YClampRange => m_yClampRange;
 
-    public float ShipRoll => shipRoll;
-    public float ShipPitch => shipPitch;
-    public float ShipRotationSpeed => shipRotationSpeed;
+    public float ShipRoll => m_shipRoll;
+    public float ShipPitch => m_shipPitch;
+    public float ShipRotationSpeed => m_shipRotationSpeed;
 }

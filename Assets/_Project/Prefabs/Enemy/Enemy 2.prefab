@@ -126,6 +126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3287997151100805782, guid: 3521ab1ec5da1e59fb07c6185590c927, type: 3}
+      propertyPath: m_enemyConfiguration
+      value: 
+      objectReference: {fileID: 11400000, guid: 20794344ca25e0fdcabfb3fae4ab9869, type: 2}
     - target: {fileID: 8876434270030205185, guid: 3521ab1ec5da1e59fb07c6185590c927, type: 3}
       propertyPath: m_Size.x
       value: 8.804602

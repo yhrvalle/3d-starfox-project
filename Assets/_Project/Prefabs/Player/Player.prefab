@@ -4850,6 +4850,7 @@ GameObject:
   - component: {fileID: 568892448186211816}
   - component: {fileID: 2925912269892753039}
   - component: {fileID: 6087490794199882052}
+  - component: {fileID: 6023491361552391790}
   m_Layer: 0
   m_Name: Player Ship
   m_TagString: Untagged
@@ -4886,8 +4887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75063a52773da08209cca17da905ad9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Core::PlayerController
-  config: {fileID: 11400000, guid: b5611560b77232cc8a7b67e70d0601c0, type: 2}
-  inputReader: {fileID: 11400000, guid: a54e0618351a6e92ab7634e6bf0f82e0, type: 2}
+  m_config: {fileID: 11400000, guid: b5611560b77232cc8a7b67e70d0601c0, type: 2}
+  m_inputReader: {fileID: 11400000, guid: 613ddc49997a6f8af887cf3c5ed271a8, type: 2}
 --- !u!114 &568892448186211816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4900,10 +4901,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a9fd41caffa65199973f454843ccb5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Core::PlayerShoot
-  inputReader: {fileID: 11400000, guid: a54e0618351a6e92ab7634e6bf0f82e0, type: 2}
-  laser: {fileID: 2351279771798878036}
-  targetPoint: {fileID: 4135847736053928085}
-  targetPointDistance: 250
+  m_inputReader: {fileID: 11400000, guid: 613ddc49997a6f8af887cf3c5ed271a8, type: 2}
+  m_laser: {fileID: 2351279771798878036}
+  m_targetPoint: {fileID: 4135847736053928085}
+  m_targetPointDistance: 250
 --- !u!65 &2925912269892753039
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4952,6 +4953,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6023491361552391790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950564219806458477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe42bd2de081f732a3753114e70c1cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Core::CollisionHandler
+  m_explosionEffect: {fileID: 8644407683095926504, guid: 76cd0cc86f85f8d4ba43b9fec66e511f, type: 3}
 --- !u!1 &3178415025774901104
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,7 +5083,7 @@ Transform:
   m_GameObject: {fileID: 6945615032232429740}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22998284, y: -0, z: -0, w: 0.9731947}
-  m_LocalPosition: {x: 0, y: 41.1, z: -36.6}
+  m_LocalPosition: {x: 0, y: 23.5, z: -20.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5205,7 +5219,7 @@ Transform:
   m_GameObject: {fileID: 7445311447410524919}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 69}
+  m_LocalPosition: {x: 0, y: 0, z: 70}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []

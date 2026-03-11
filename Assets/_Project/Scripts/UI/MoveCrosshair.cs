@@ -1,15 +1,16 @@
 using Enthalpy.Input;
 using UnityEngine;
 
+[RequireComponent(typeof(RectTransform))]
 public class MoveCrosshair : MonoBehaviour
 {
-    [SerializeField] private PlayerInputReader inputReader;
-    private RectTransform _transform;
+    [SerializeField] private PlayerInputReader m_inputReader;
+    private RectTransform m_transform;
 
 
     private void Awake()
     {
-        _transform = GetComponent<RectTransform>();
+        m_transform = GetComponent<RectTransform>();
     }
 
     private void Start()
@@ -19,16 +20,16 @@ public class MoveCrosshair : MonoBehaviour
 
     private void OnEnable()
     {
-        inputReader.MPos += OnMousePositionChanged;
+        m_inputReader.MPos += OnMousePositionChanged;
     }
 
     private void OnDisable()
     {
-        inputReader.MPos -= OnMousePositionChanged;
+        m_inputReader.MPos -= OnMousePositionChanged;
     }
 
     private void OnMousePositionChanged(Vector2 position)
     {
-        _transform.position = position;
+        m_transform.position = position;
     }
 }

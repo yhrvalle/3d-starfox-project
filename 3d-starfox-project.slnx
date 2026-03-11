@@ -3,4 +3,5 @@
   <Project Path="Enthalpy.Input.csproj" />
   <Project Path="Core.csproj" />
   <Project Path="Core.UI.csproj" />
+  <Project Path="Core.Shared.csproj" />
 </Solution>

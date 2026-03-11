@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerConfiguration config;
-    [SerializeField] private PlayerInputReader inputReader;
+    [SerializeField] private PlayerConfiguration m_config;
+    [SerializeField] private PlayerInputReader m_inputReader;
 
-    private Vector2 _direction;
+    private Vector2 m_direction;
 
     private void Start()
     {
-        inputReader.EnablePlayerInputActions();
+        m_inputReader.EnablePlayerInputActions();
     }
 
     private void Update()
@@ -21,32 +21,32 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        inputReader.Move += OnMove;
+        m_inputReader.Move += OnMove;
     }
 
     private void OnDisable()
     {
-        inputReader.Move -= OnMove;
-        inputReader.DisablePlayerInputActions();
+        m_inputReader.Move -= OnMove;
+        m_inputReader.DisablePlayerInputActions();
     }
 
     private void RotationBehaviour() // Ship rotation: (pitch, yaw, roll) x, y, z considering local rotation
     {
-        float controlRoll = -config.ShipRoll * _direction.x;
-        float controlPitch = -config.ShipPitch * _direction.y;
+        float controlRoll = -m_config.ShipRoll * m_direction.x;
+        float controlPitch = -m_config.ShipPitch * m_direction.y;
         Quaternion targetRotation = Quaternion.Euler(controlPitch, 0f, controlRoll);
-        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * config.ShipRotationSpeed);
+        transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, Time.deltaTime * m_config.ShipRotationSpeed);
     }
 
 
     private void OnMove(Vector2 move)
     {
-        _direction = move;
+        m_direction = move;
     }
 
     private void TranslateBehaviour()
     {
-        Vector3 rateChange = _direction * (config.ShipSpeed * Time.deltaTime);
+        Vector3 rateChange = m_direction * (m_config.ShipSpeed * Time.deltaTime);
         transform.localPosition = new Vector3(transform.localPosition.x + rateChange.x, transform.localPosition.y + rateChange.y, 0f);
         ClampPlayerPosition(rateChange);
     }
@@ -54,8 +54,8 @@ public class PlayerController : MonoBehaviour
     private void ClampPlayerPosition(Vector3 rateChange) // using the camera probably is a more elegant way to do this.
     {
         Vector3 clampedPosition = transform.localPosition + rateChange;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -config.XClampRange, config.XClampRange);
-        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -config.YClampRange, config.YClampRange);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -m_config.XClampRange, m_config.XClampRange);
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -m_config.YClampRange, m_config.YClampRange);
         transform.localPosition = new Vector3(clampedPosition.x, clampedPosition.y, transform.localPosition.z);
     }
 }
