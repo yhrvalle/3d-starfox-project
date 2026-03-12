@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1eddd5d86f49c40c18061821eccdf986, type: 3}
-  m_Name: Enemy 1
+  m_Name: Weak-Mid
   m_EditorClassIdentifier: Core::EnemyConfiguration
-  m_health: 6
-  m_points: 50
+  m_health: 12
+  m_points: 100
