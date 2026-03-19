@@ -12,3 +12,5 @@ In this project I focused my attention, besides the course content, to learn how
 In the context of this project the Shared Data is only and Score scriptable object
 
 Core (ScoreManager) -> Core.Shared (ScoreUpdaterSO) <- Core.UI (ScoreUpdater)
+
+My project exploded and a lot of assets is missing from this repo, for some reason, F
